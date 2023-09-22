@@ -1,0 +1,23 @@
+.tile {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile-inner {
+  font-size: 35px;
+  font-weight: bolder;
+  color: brown;
+  text-align: center;
+}
+
+.tile-2 {
+  background-color: antiquewhite;
+}
+
+.tile-4 {
+  background-color: rgb(236, 213, 182);
+}
