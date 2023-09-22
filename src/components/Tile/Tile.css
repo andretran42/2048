@@ -8,9 +8,9 @@
 }
 
 .tile-inner {
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bolder;
-  color: brown;
+  color: rgb(71, 43, 38);
   text-align: center;
 }
 
@@ -20,4 +20,77 @@
 
 .tile-4 {
   background-color: rgb(236, 213, 182);
+}
+
+.tile-8 {
+  background-color: rgb(228, 154, 97);
+}
+
+.tile-16 {
+  .tile-inner {
+    color: white;
+  }
+  background-color: rgb(242, 122, 89);
+}
+
+.tile-32 {
+  .tile-inner {
+    color: white;
+  }
+  background-color: rgb(238, 79, 65);
+}
+
+.tile-64 {
+  .tile-inner {
+    color: white;
+  }
+  background-color: rgb(246, 36, 36);
+}
+
+.tile-128 {
+  .tile-inner {
+    font-size: 30px;
+    color: white;
+  }
+  background-color: rgb(247, 220, 167);
+}
+
+.tile-128 {
+  .tile-inner {
+    font-size: 40px;
+    color: white;
+  }
+  background-color: rgb(250, 226, 178);
+}
+
+.tile-256 {
+  .tile-inner {
+    font-size: 40px;
+    color: white;
+  }
+  background-color: rgb(240, 216, 150);
+}
+
+.tile-512 {
+  .tile-inner {
+    font-size: 40px;
+    color: white;
+  }
+  background-color: rgb(241, 202, 123);
+}
+
+.tile-1028 {
+  .tile-inner {
+    font-size: 38px;
+    color: white;
+  }
+  background-color: rgb(244, 188, 84);
+}
+
+.tile-2048 {
+  .tile-inner {
+    font-size: 38px;
+    color: white;
+  }
+  background-color: rgb(247, 182, 30);
 }
