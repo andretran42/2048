@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Tile from "../src/components/Tile/Tile";
+import Board from "../src/components/Board/Board";
 
 function App() {
   return (
@@ -18,6 +19,12 @@ function App() {
       <Tile value={512} x={0} y={200}></Tile>
       <Tile value={1028} x={100} y={200}></Tile>
       <Tile value={2048} x={200} y={200}></Tile>
+      <Board
+        tiles={[
+          { val: 4, x: 300, y: 500 },
+          { val: 8, x: 400, y: 500 },
+        ]}
+      ></Board>
     </>
   );
 }
