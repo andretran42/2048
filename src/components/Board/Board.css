@@ -1,0 +1,8 @@
+.board_container {
+  position: absolute;
+  top: 200px;
+  left: 400px;
+  width: 425px;
+  height: 425px;
+  background-color: rgb(120, 107, 107);
+}

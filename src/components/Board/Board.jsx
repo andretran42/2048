@@ -1,6 +1,8 @@
 import React from "react";
 import Tile from "../Tile/Tile";
 
+import "./Board.css";
+
 function Board({ tiles }) {
   return (
     <div className="board_container">

@@ -4,25 +4,25 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Tile from "../src/components/Tile/Tile";
 import Board from "../src/components/Board/Board";
-
+import {
+  createBoard,
+  newBoard,
+  randLocation,
+  randVal,
+} from "./utils/boardutil";
+const a = newBoard();
 function App() {
+  console.log(a);
   return (
     <>
-      <Tile value={2} x={0} y={0}></Tile>
-      <Tile value={4} x={100} y={0}></Tile>
-      <Tile value={8} x={200} y={0}></Tile>
-      <Tile value={16} x={300} y={0}></Tile>
-      <Tile value={32} x={300} y={100}></Tile>
-      <Tile value={64} x={200} y={100}></Tile>
-      <Tile value={128} x={100} y={100}></Tile>
-      <Tile value={256} x={0} y={100}></Tile>
-      <Tile value={512} x={0} y={200}></Tile>
-      <Tile value={1028} x={100} y={200}></Tile>
-      <Tile value={2048} x={200} y={200}></Tile>
       <Board
         tiles={[
-          { val: 4, x: 300, y: 500 },
-          { val: 8, x: 400, y: 500 },
+          { val: 4, x: 5, y: 5 },
+          { val: 8, x: 110, y: 5 },
+          { val: 2, x: 215, y: 5 },
+          { val: 2, x: 320, y: 5 },
+          { val: 16, x: 5, y: 110 },
+          { val: 128, x: 110, y: 110 },
         ]}
       ></Board>
     </>
