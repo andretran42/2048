@@ -9,10 +9,24 @@ import {
   newBoard,
   randLocation,
   randVal,
+  updateBoard,
 } from "./utils/boardutil";
-const a = newBoard();
+var a = newBoard();
+document.addEventListener("keydown", (event) => {
+  event.preventDefault();
+  var name = event.key;
+  if (name == "ArrowRight") {
+    a = updateBoard(a, "right");
+  } else if (name == "ArrowLeft") {
+    a = updateBoard(a, "left");
+  } else if (name == "ArrowUp") {
+    a = updateBoard(a, "up");
+  } else if ((name = "ArrowDown")) {
+    a = updateBoard(a, "down");
+  }
+  a.forEach((line) => console.log(line));
+});
 function App() {
-  console.log(a);
   return (
     <>
       <Board
