@@ -45,7 +45,6 @@ export function randVal() {
 export function placeNewTile(board) {
   var loc = randLocation();
   while (board[loc.x][loc.y] != 0) {
-    console.log(loc);
     loc = randLocation();
   }
   const rand = randVal();
@@ -168,3 +167,5 @@ export function mergeOp(board, dir) {
   }
   return board;
 }
+
+export function mapBoard(board) {}

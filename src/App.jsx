@@ -12,21 +12,40 @@ import {
   updateBoard,
 } from "./utils/boardutil";
 var a = newBoard();
-document.addEventListener("keydown", (event) => {
-  event.preventDefault();
-  var name = event.key;
-  if (name == "ArrowRight") {
-    a = updateBoard(a, "right");
-  } else if (name == "ArrowLeft") {
-    a = updateBoard(a, "left");
-  } else if (name == "ArrowUp") {
-    a = updateBoard(a, "up");
-  } else if ((name = "ArrowDown")) {
-    a = updateBoard(a, "down");
-  }
-  a.forEach((line) => console.log(line));
-});
+// document.addEventListener("keydown", (event) => {
+//   event.preventDefault();
+//   var name = event.key;
+//   if (name == "ArrowRight") {
+//     a = updateBoard(a, "right");
+//   } else if (name == "ArrowLeft") {
+//     a = updateBoard(a, "left");
+//   } else if (name == "ArrowUp") {
+//     a = updateBoard(a, "up");
+//   } else if ((name = "ArrowDown")) {
+//     a = updateBoard(a, "down");
+//   }
+//   a.forEach((line) => console.log(line));
+// });
 function App() {
+  const [board, setBoard] = useState(a);
+
+  const keyHandler = (event) => {
+    event.preventDefault();
+    var name = event.key;
+    if (name == "ArrowRight") {
+      setBoard(updateBoard(a, "right"));
+    } else if (name == "ArrowLeft") {
+      setBoard(updateBoard(a, "left"));
+    } else if (name == "ArrowUp") {
+      setBoard(updateBoard(a, "up"));
+    } else if ((name = "ArrowDown")) {
+      setBoard(updateBoard(a, "down"));
+    }
+    console.log(board);
+  };
+
+  console.log(board);
+  document.addEventListener("keydown", (e) => keyHandler(e));
   return (
     <>
       <Board
