@@ -57,7 +57,8 @@ export function updateBoard(board, dir) {
   board = mergeOp(board, dir);
   board = moveOp(board, dir);
   board = placeNewTile(board);
-  return board;
+  const clone = board.map((row) => row);
+  return clone;
 }
 
 export function moveOp(board, dir) {
@@ -91,7 +92,7 @@ export function moveOp(board, dir) {
       var y_2 = 2;
       var sign_y = -1;
     }
-    while ((x_2 >= 0) & (x_2 <= 3) & (y_2 >= 0) & (x_2 <= 3)) {
+    while ((x_2 >= 0) & (x_2 <= 3) & (y_2 >= 0) & (y_2 <= 3)) {
       if ((board[x][y] == 0) & (board[x_2][y_2] != 0)) {
         board[x][y] = board[x_2][y_2];
         board[x_2][y_2] = 0;
@@ -168,4 +169,15 @@ export function mergeOp(board, dir) {
   return board;
 }
 
-export function mapBoard(board) {}
+export function mapBoard(board) {
+  var tiles_li = [];
+  for (let r = 0; r < 4; r++) {
+    for (var c = 0; c < 4; c++) {
+      var y = 100 * r;
+      var x = 100 * c;
+      var val = board[r][c];
+      tiles_li.push({ x: x, y: y, val: val });
+    }
+  }
+  return tiles_li;
+}
