@@ -29,6 +29,8 @@ function App() {
       setBoard(updateBoard(board, "up"));
     } else if ((name = "ArrowDown")) {
       setBoard(updateBoard(board, "down"));
+    } else {
+      return;
     }
     console.log(board);
   }, []);

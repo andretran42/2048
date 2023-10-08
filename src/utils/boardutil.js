@@ -53,12 +53,65 @@ export function placeNewTile(board) {
 }
 
 export function updateBoard(board, dir) {
-  board = moveOp(board, dir);
-  board = mergeOp(board, dir);
-  board = moveOp(board, dir);
-  board = placeNewTile(board);
-  const clone = board.map((row) => row);
-  return clone;
+  if (legalMove(board, dir)) {
+    board = moveOp(board, dir);
+    board = mergeOp(board, dir);
+    board = moveOp(board, dir);
+    board = placeNewTile(board);
+    const clone = board.map((row) => row);
+    return clone;
+  } else {
+    return board;
+  }
+}
+
+export function legalMove(board, dir) {
+  if (dir == "down") {
+    for (let c = 0; c <= 3; c++) {
+      for (let r = 0; r <= 2; r++) {
+        if (
+          (board[r][c] != 0) &
+          (board[r + 1][c] == 0 || board[r + 1][c] == board[r][c])
+        ) {
+          return true;
+        }
+      }
+    }
+  } else if (dir == "up") {
+    for (let c = 0; c <= 3; c++) {
+      for (let r = 1; r <= 3; r++) {
+        if (
+          (board[r][c] != 0) &
+          (board[r - 1][c] == 0 || board[r - 1][c] == board[r][c])
+        ) {
+          return true;
+        }
+      }
+    }
+  } else if (dir == "left") {
+    for (let c = 1; c <= 3; c++) {
+      for (let r = 0; r <= 3; r++) {
+        if (
+          (board[r][c] != 0) &
+          (board[r][c - 1] == 0 || board[r][c - 1] == board[r][c])
+        ) {
+          return true;
+        }
+      }
+    }
+  } else if (dir == "right") {
+    for (let c = 0; c <= 2; c++) {
+      for (let r = 0; r <= 3; r++) {
+        if (
+          (board[r][c] != 0) &
+          (board[r][c + 1] == 0 || board[r][c + 1] == board[r][c])
+        ) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
 }
 
 export function moveOp(board, dir) {

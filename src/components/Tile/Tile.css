@@ -15,6 +15,12 @@
   text-align: center;
 }
 
+.tile-0 {
+  .tile-inner {
+    color: rgba(0, 0, 0, 0);
+  }
+}
+
 .tile-2 {
   background-color: antiquewhite;
 }
